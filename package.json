@@ -13,7 +13,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "prepare": "npm run build",
+    "prepare": "pnpm run build",
     "clean": "rimraf node_modules dist parcel-dist .parcel-cache",
     "dev": "ts-node -T build.ts -w",
     "build": "ts-node -T build.ts",
@@ -36,6 +36,7 @@
     "lodash.clonedeep": "^4.5.0",
     "loglevel": "^1.8.0",
     "mark.js": "^8.11.1",
+    "parse5": "^7.1.2",
     "pdfjs-dist": "2.14.305",
     "promise-polyfill": "^8.2.0",
     "r2-shared-js": "^1.0.51",
@@ -70,7 +71,6 @@
     "@types/mark.js": "^8.11.5",
     "@types/mocha": "^10.0.1",
     "@types/pako": "^2.0.0",
-    "@types/parse5": "^7.0.0",
     "@types/promise-polyfill": "^6.0.5",
     "@types/react": "^18.2.31",
     "@types/react-dom": "^18.2.14",
@@ -103,6 +103,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "express": "^4.17.1",
     "json-schema": ">=0.4.0",
+    "lodash": "^4.17.21",
     "minimist": "^1.2.6",
     "mocha": "^10.2.0",
     "moment": "^2.29.3",
@@ -128,14 +129,12 @@
     "typedoc": "^0.26.5",
     "typedoc-plugin-rename-defaults": "^0.7.1",
     "typescript": "5.5.4",
-    "urijs": "^1.19.11"
+    "urijs": "^1.19.11",
+    "uuid": "^10.0.0"
   },
   "files": [
     "dist"
   ],
-  "resolutions": {
-    "braces": "3.0.3"
-  },
   "prettier": {
     "printWidth": 80,
     "semi": true,

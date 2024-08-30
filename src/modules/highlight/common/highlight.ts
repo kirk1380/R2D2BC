@@ -34,8 +34,8 @@ export interface IStyleProperty {
 }
 
 export interface IStyle {
-  default?: [IStyleProperty] | undefined;
-  hover?: [IStyleProperty] | undefined;
+  default?: [IStyleProperty] | undefined | null;
+  hover?: [IStyleProperty] | undefined | null;
   defaultClass?: string | undefined;
   hoverClass?: string | undefined;
 }

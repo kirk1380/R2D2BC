@@ -94,6 +94,7 @@ export default class D2Reader {
 
   addEventListener() {
     if (this.navigator instanceof IFrameNavigator) {
+      // eslint-disable-next-line prefer-rest-params
       this.navigator.addListener(arguments[0], arguments[1]);
     }
   }
@@ -132,7 +133,7 @@ export default class D2Reader {
     const headerMenu = findElement(document, "#headerMenu");
     const footerMenu = findElement(document, "#footerMenu");
 
-    let webPubManifestUrl = initialConfig.url;
+    const webPubManifestUrl = initialConfig.url;
     let publication;
     if (initialConfig.publication) {
       publication = TaJsonDeserialize<Publication>(
@@ -389,7 +390,7 @@ export default class D2Reader {
         requestConfig: initialConfig.requestConfig,
         injectables:
           (publication.Metadata.Rendition?.Layout ?? "unknown") === "fixed"
-            ? initialConfig.injectablesFixed ?? []
+            ? (initialConfig.injectablesFixed ?? [])
             : initialConfig.injectables,
         attributes: initialConfig.attributes,
         services: initialConfig.services,
@@ -522,9 +523,9 @@ export default class D2Reader {
   addAnnotation = async (highlight: Annotation) => {
     return (await this.annotationModule?.addAnnotation(highlight)) ?? false;
   };
-  /** 
+  /**
    * Update annotation
-   * 
+   *
    * This should be used only when the add/delete of the annotation note
    * is not directly handled in the `addAnnotation`/`addCommentToAnnotation`
    * callback defined in the configuration of the D2Reader.load() method

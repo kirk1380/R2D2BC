@@ -53,5 +53,8 @@
     "entryPointStrategy": "expand",
     "out": "docs",
     "excludePrivate": true
-  }
+  },
+  "paths": {
+    "*": ["node_modules/*"],
+  },
 }

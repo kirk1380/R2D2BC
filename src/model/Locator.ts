@@ -19,7 +19,9 @@
 
 import { IHighlight } from "../modules/highlight/common/highlight";
 
-export interface Locator {
+// Changed interface to class so it can be imported by src/index.ts
+// when R2D2BC is used as a submodule in pnpm
+export class Locator {
   href: string;
   type?: string;
   title?: string;
@@ -43,7 +45,9 @@ export interface Locations {
   totalRemainingPositions?: number;
 }
 
-export interface ReadingPosition extends Locator {
+// Changed interface to class so it can be imported by src/index.ts
+// when R2D2BC is used as a submodule in pnpm
+export class ReadingPosition extends Locator {
   created: Date;
 }
 
